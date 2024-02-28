@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit and Remove ELement in DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+
+  <script>
+    // We want to add more values in the list
+    // function addLanguage(lang) {
+    //   const li = document.createElement("li");
+    //   li.innerHTML = `${lang}`; // this is not an optimize approach because it traverse the whole tree
+    //   document.querySelector("li").appendChild(li);
+    // }
+    // addLanguage("Python");
+
+    function addLanguageInOptimzeWay(lang) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(lang)); // this is optimze way because it only add text node rather than traverse the whole tree
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguageInOptimzeWay("C++");
+    addLanguageInOptimzeWay("Python");
+    addLanguageInOptimzeWay("goLang");
+
+    // Edit the element
+    const editElement = document.querySelector("li:nth-child(2)");
+    const newLi = document.createElement("li");
+    newLi.appendChild(document.createTextNode("Java"));
+    editElement.replaceWith(newLi);
+
+    // Second Example of Edit
+    const editSecondElement = document.querySelector("li:last-child");
+    editSecondElement.outerHTML = "<li>Typescript</li>";
+
+    // Remove Element
+    const removeElement = document.querySelector("li:last-child");
+    removeElement.remove();
+  </script>
+</html>
