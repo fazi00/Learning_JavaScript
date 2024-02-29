@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async or Non Blocking in JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+
+  <script>
+    // +++++++++++++++++++ setTimeout & clearTimeout +++++++++++++++++++
+    // This api is used to run the event after a specific time only for once.
+    const changeMe = setTimeout(function () {
+      document.querySelector("h1").innerHTML =
+        "Watching best series on Youtube";
+    }, 2000);
+
+    // If one want to stop the functionality of setTimeout() api so for this we use clearTimeout() api
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(changeMe);
+    });
+  </script>
+</html>

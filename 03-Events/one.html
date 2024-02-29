@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Events in Javascript</title>
+  </head>
+  <body>
+    <div>
+      <ul class="list">
+        <li class="day1">Monday</li>
+        <li class="day2">Tuesday</li>
+        <li class="day3">Friday</li>
+        <li class="day4">Sunday</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    document.querySelector(".day1").addEventListener("click", () => {
+      alert("Hover");
+    });
+  </script>
+</html>
+
+
+// +++++++++++++++++ NOTES +++++++++++++++++  
+
+1. An event is a signal that something has happened.
+All DOM nodes generate such signals (but events are not limited to DOM).
